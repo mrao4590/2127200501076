@@ -1,0 +1,52 @@
+http://104.211.219.98/train/register (POST)
+
+{
+    "companyName":"hello",
+    "ownerName":"mohan",
+    "rollNo":"76",
+    "ownerEmail":"raom8925@gmail.com",
+    "accessCode":"nNPGsi"
+
+
+}
+
+Expected Response:
+
+{
+    "companyName": "hello",
+    "clientID": "7462c87e-cb2d-4c4d-a6ad-efd5083331b0",
+    "clientSecret": "XJzEKTBNCvokhNhS",
+    "ownerName": "mohan",
+    "ownerEmail": "raom8925@gmail.com",
+    "rollNo": "76"
+}
+
+http://104.211.219.98/train/auth/ (POST)
+
+{
+    "companyName": "hello",
+    "clientID": "7462c87e-cb2d-4c4d-a6ad-efd5083331b0",
+    "clientSecret": "XJzEKTBNCvokhNhS",
+    "ownerName": "mohan",
+    "ownerEmail": "raom8925@gmail.com",
+    "rollNo": "76"
+}
+
+Expected Response:
+
+{
+    "token_type": "Bearer",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODgxMzg4MTcsImNvbXBhbnlOYW1lIjoiaGVsbG8iLCJjbGllbnRJRCI6Ijc0NjJjODdlLWNiMmQtNGM0ZC1hNmFkLWVmZDUwODMzMzFiMCIsIm93bmVyTmFtZSI6IiIsIm93bmVyRW1haWwiOiIiLCJyb2xsTm8iOiI3NiJ9.wXYnA1dcx5zhfu0MDm7GkSp-AEMnccPoB-mQl7JspLo",
+    "expires_in": 1688138817
+}
+
+Expected response from the above access token:
+
+
+[{"trainName":"Chennai Exp","trainNumber":"2344","departureTime":{"Hours":21,"Minutes":35,"Seconds":0},"seatsAvailable":{"sleeper":3,"AC":1},"price":{"sleeper":380,"AC":500},"delayedBy":15},{"trainName":"Manu Exp","trainNumber":"2346","departureTime":{"Hours":19,"Minutes":0,"Seconds":0},"seatsAvailable":{"sleeper":15,"AC":10},"price":{"sleeper":480,"AC":680},"delayedBy":13},{"trainName":"Kolkata Exp","trainNumber":"2345","departureTime":{"Hours":20,"Minutes":15,"Seconds":0},"seatsAvailable":{"sleeper":16,"AC":70},"price":{"sleeper":540,"AC":640},"delayedBy":14},{"trainName":"Test Exp","trainNumber":"2348","departureTime":{"Hours":15,"Minutes":55,"Seconds":0},"seatsAvailable":{"sleeper":1,"AC":0},"price":{"sleeper":692,"AC":979},"delayedBy":11},{"trainName":"Manoranjan Exp","trainNumber":"2347","departureTime":{"Hours":17,"Minutes":33,"Seconds":0},"seatsAvailable":{"sleeper":5,"AC":1},"price":{"sleeper":286,"AC":413},"delayedBy":12},{"trainName":"Pune Exp","trainNumber":"2342","departureTime":{"Hours":23,"Minutes":0,"Seconds":0},"seatsAvailable":{"sleeper":6,"AC":7},"price":{"sleeper":764,"AC":1764},"delayedBy":17},{"trainName":"Mumbai Exp","trainNumber":"2343","departureTime":{"Hours":22,"Minutes":37,"Seconds":0},"seatsAvailable":{"sleeper":8,"AC":15},"price":{"sleeper":560,"AC":660},"delayedBy":16},{"trainName":"Hyderabad Exp","trainNumber":"2341","departureTime":{"Hours":23,"Minutes":55,"Seconds":0},"seatsAvailable":{"sleeper":6,"AC":7},"price":{"sleeper":554,"AC":1854},"delayedBy":5}]
+
+
+Expected Response after (http://104.211.219.98/train/trains/2344) using GET method:
+
+{"trainName":"Chai Wala Exp","trainNumber":"2344","departureTime":{"Hours":11,"Minutes":0,"Seconds":0},"seatsAvailable":{"sleeper":33,"AC":13},"price":{"sleeper":593,"AC":704},"delayedBy":4}
+
